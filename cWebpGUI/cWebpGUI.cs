@@ -21,9 +21,14 @@ namespace cWebpGUI
                 var res = MessageBox.Show("Your missing the Utilities! Download now?", "Missing cWebp", MessageBoxButtons.YesNo);
                 if (res == DialogResult.Yes)
                 {
+
                     WebClient wc = new WebClient();
                     wc.DownloadFile(wc.DownloadString("https://raw.githubusercontent.com/ThioJoe/LibWebpToolsGUI/master/preq.txt"), "libwebp.zip");
-                    ZipFile.ExtractToDirectory("libwebp.zip", Application.StartupPath);
+                    Directory.CreateDirectory(Application.StartupPath + ".temp");
+                    ZipFile.ExtractToDirectory("libwebp.zip", Application.StartupPath + @"\.temp");
+                    File.Copy(Application.StartupPath + @"\.temp\bin\dwebp.exe", Application.StartupPath + @"\dwepb.exe");
+                    File.Copy(Application.StartupPath + @"\.temp\bin\cwebp.exe", Application.StartupPath + @"\cwebp.exe");
+                    Directory.Delete(Application.StartupPath + @"\.temp", true);
                     MessageBox.Show("Success!", "yay");
                 }
             }
