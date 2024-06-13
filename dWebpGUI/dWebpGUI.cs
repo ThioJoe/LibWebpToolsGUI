@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.Net;
 using System.Windows.Forms;
-
+using System.IO.Compression;
 namespace dWebpGUI
 {
     public partial class dWebpGUI : Form
@@ -12,7 +13,20 @@ namespace dWebpGUI
             InitializeComponent();
             UpdateCommandPreview();
         }
-
+        private void dWebpGUI_Load(object sender, EventArgs e)
+        {
+            if (!File.Exists("dwebp.exe"))
+            {
+                var res = MessageBox.Show("Your missing the Utilities! Download now?", "Missing dwebp", MessageBoxButtons.YesNo);
+                if(res == DialogResult.Yes)
+                {
+                    WebClient wc = new WebClient();
+                    wc.DownloadFile(wc.DownloadString("https://raw.githubusercontent.com/ThioJoe/LibWebpToolsGUI/master/preq.txt"), "libwebp.zip");
+                    ZipFile.ExtractToDirectory("libwebp.zip", Application.StartupPath);
+                    MessageBox.Show("Success!", "yay");
+                }
+            }
+        }
         private void btnConvert_Click(object sender, EventArgs e)
         {
             string inputFile = txtInputFile.Text;
@@ -171,5 +185,7 @@ namespace dWebpGUI
         {
             UpdateCommandPreview();
         }
+
+
     }
 }
