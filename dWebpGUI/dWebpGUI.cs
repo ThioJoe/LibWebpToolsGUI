@@ -149,6 +149,33 @@ namespace dWebpGUI
 
         private void txtOutputFile_TextChanged(object sender, EventArgs e)
         {
+            // This prevents a crash if we type in this box before selecting an input
+            if (txtInputFile.Text == "" && txtOutputFile.Text != string.Empty)
+            {
+                txtOutputFile.Text = string.Empty;
+                MessageBox.Show("You must select an input file first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Automatically update the radio buttons based on what we chose here
+            string extension = Path.GetExtension(txtOutputFile.Text);
+            switch (extension.ToLower())
+            {
+                case ".png":
+                    rbPNG.Checked = true; break;
+                case ".tif":
+                    rbTIFF.Checked = true; break;
+                case ".pam":
+                    rbPAM.Checked = true; break;
+                case ".ppm":
+                    rbPPM.Checked = true; break;
+                case ".pgm":
+                    rbPGM.Checked = true; break;
+                case ".yuv":
+                    rbYUV.Checked = true; break;
+                case ".bmp":
+                    rbBMP.Checked = true; break;
+            }
             UpdateCommandPreview();
         }
 
@@ -160,6 +187,14 @@ namespace dWebpGUI
         private void OutputFormat_CheckedChanged(object sender, EventArgs e)
         {
             UpdateCommandPreview();
+
+            // update the extension in the output field
+            if (!string.IsNullOrWhiteSpace(txtOutputFile.Text))
+            {
+                string directory = Path.GetDirectoryName(txtOutputFile.Text);
+                string filenameWithoutExtension = Path.GetFileNameWithoutExtension(txtOutputFile.Text);
+                txtOutputFile.Text = Path.Combine(directory, filenameWithoutExtension + GetOutputExtension());
+            }
         }
 
         private void txtResizeWidth_TextChanged(object sender, EventArgs e)
@@ -170,6 +205,47 @@ namespace dWebpGUI
         private void txtResizeHeight_TextChanged(object sender, EventArgs e)
         {
             UpdateCommandPreview();
+        }
+
+        private void btnBrowseInput_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+                txtInputFile.Text = openFileDialog.FileName;
+        }
+
+        private void btnBrowseOutput_Click(object sender, EventArgs e)
+        {
+            if (txtInputFile.Text == "")
+            {
+                MessageBox.Show("You must select an input file first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK || saveFileDialog.FileName != "")
+            {
+                txtOutputFile.Text = saveFileDialog.FileName;
+
+                // Automatically update the radio buttons based on what we chose here
+                string extension = Path.GetExtension(txtOutputFile.Text);
+                switch (extension.ToLower())
+                {
+                    case ".png":
+                        rbPNG.Checked = true; break;
+                    case ".tif":
+                        rbTIFF.Checked = true; break;
+                    case ".pam":
+                        rbPAM.Checked = true; break;
+                    case ".ppm":
+                        rbPPM.Checked = true; break;
+                    case ".pgm":
+                        rbPGM.Checked = true; break;
+                    case ".yuv":
+                        rbYUV.Checked = true; break;
+                    case ".bmp":
+                        rbBMP.Checked = true; break;
+                }
+            }
+            
         }
     }
 }
