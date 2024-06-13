@@ -17,7 +17,6 @@
 
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cWebpGUI));
             this.lblInputFile = new System.Windows.Forms.Label();
             this.txtInputFile = new System.Windows.Forms.TextBox();
@@ -41,7 +40,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip();
             this.btnBrowseInput = new System.Windows.Forms.Button();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.btnBrowseOutput = new System.Windows.Forms.Button();
@@ -297,7 +296,6 @@
             // 
             // openFileDialog
             // 
-            this.openFileDialog.FileName = "openFileDialog";
             this.openFileDialog.Filter = "All Images|*png;*.jpg;*.jpeg;.tif;*.tiff;*.yuv|JPEG Image|*.jpg;*.jpeg|PNG Image|" +
     "*.png|TIFF Image|*.tif;*tiff|YUV Image|*.yuv";
             // 
