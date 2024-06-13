@@ -5,6 +5,7 @@ using System.Windows.Forms;
 
 namespace cWebpGUI
 {
+    // "All Images|*png, *.jpg, *.jpeg, .tif,*.tiff,*.yuv|JPEG Image|*.jpg,*.jpeg|PNG Image|*.png|TIFF Image|*.tif,*tiff|YUV Image|*.yuv|"
     public partial class cWebpGUI : Form
     {
         public cWebpGUI()
@@ -147,6 +148,13 @@ namespace cWebpGUI
 
         private void txtOutputFile_TextChanged(object sender, EventArgs e)
         {
+            // This prevents a crash if we type in this box before selecting an input
+            if (txtInputFile.Text == "" && txtOutputFile.Text != string.Empty)
+            {
+                txtOutputFile.Text = string.Empty;
+                MessageBox.Show("You must select an input file first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             UpdateCommandPreview();
         }
 
@@ -183,6 +191,24 @@ namespace cWebpGUI
         private void cmbMethod_SelectedIndexChanged(object sender, EventArgs e)
         {
             UpdateCommandPreview();
+        }
+
+        private void btnBrowseInput_Click(object sender, EventArgs e)
+        {
+            if(openFileDialog.ShowDialog() == DialogResult.OK)
+                txtInputFile.Text = openFileDialog.FileName;
+        }
+
+        private void btnBrowseOutput_Click(object sender, EventArgs e)
+        {
+            if(txtInputFile.Text == "")
+            {
+                MessageBox.Show("You must select an input file first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK || saveFileDialog.FileName != "")
+                txtOutputFile.Text = saveFileDialog.FileName;
         }
     }
 }
