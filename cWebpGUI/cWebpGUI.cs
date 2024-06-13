@@ -5,7 +5,6 @@ using System.Windows.Forms;
 
 namespace cWebpGUI
 {
-    // "All Images|*png, *.jpg, *.jpeg, .tif,*.tiff,*.yuv|JPEG Image|*.jpg,*.jpeg|PNG Image|*.png|TIFF Image|*.tif,*tiff|YUV Image|*.yuv|"
     public partial class cWebpGUI : Form
     {
         public cWebpGUI()
