@@ -298,7 +298,7 @@
             // openFileDialog
             // 
             this.openFileDialog.Filter = "All Images|*png;*.jpg;*.jpeg;.tif;*.tiff;*.yuv|JPEG Image|*.jpg;*.jpeg|PNG Image|" +
-    "*.png|TIFF Image|*.tif;*tiff|YUV Image|*.yuv";
+    "*.png|TIFF Image|*.tif;*tiff|YUV Image|*.yuv|All Files|*.*";
             // 
             // btnBrowseOutput
             // 
