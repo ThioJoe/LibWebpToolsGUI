@@ -87,7 +87,7 @@
             this.chkLossless.AutoSize = true;
             this.chkLossless.Location = new System.Drawing.Point(15, 70);
             this.chkLossless.Name = "chkLossless";
-            this.chkLossless.Size = new System.Drawing.Size(73, 21);
+            this.chkLossless.Size = new System.Drawing.Size(66, 17);
             this.chkLossless.TabIndex = 4;
             this.chkLossless.Text = "Lossless";
             this.chkLossless.UseVisualStyleBackColor = true;
@@ -98,7 +98,7 @@
             this.chkMultiThreading.AutoSize = true;
             this.chkMultiThreading.Location = new System.Drawing.Point(15, 93);
             this.chkMultiThreading.Name = "chkMultiThreading";
-            this.chkMultiThreading.Size = new System.Drawing.Size(106, 21);
+            this.chkMultiThreading.Size = new System.Drawing.Size(99, 17);
             this.chkMultiThreading.TabIndex = 5;
             this.chkMultiThreading.Text = "Multi-Threading";
             this.chkMultiThreading.UseVisualStyleBackColor = true;
@@ -109,7 +109,7 @@
             this.chkLowMemory.AutoSize = true;
             this.chkLowMemory.Location = new System.Drawing.Point(15, 116);
             this.chkLowMemory.Name = "chkLowMemory";
-            this.chkLowMemory.Size = new System.Drawing.Size(93, 21);
+            this.chkLowMemory.Size = new System.Drawing.Size(86, 17);
             this.chkLowMemory.TabIndex = 6;
             this.chkLowMemory.Text = "Low Memory";
             this.chkLowMemory.UseVisualStyleBackColor = true;
@@ -197,7 +197,7 @@
             "5",
             "6"});
             this.cmbMethod.Location = new System.Drawing.Point(100, 224);
-            this.cmbMethod.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbMethod.Margin = new System.Windows.Forms.Padding(2);
             this.cmbMethod.Name = "cmbMethod";
             this.cmbMethod.Size = new System.Drawing.Size(68, 21);
             this.cmbMethod.TabIndex = 14;
@@ -235,7 +235,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(211, 142);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(16, 16);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -247,7 +247,7 @@
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(211, 168);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(16, 16);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -259,7 +259,7 @@
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(211, 198);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(16, 16);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -272,7 +272,7 @@
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.Location = new System.Drawing.Point(211, 227);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(16, 16);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -280,7 +280,7 @@
             this.pictureBox4.TabStop = false;
             this.toolTip1.SetToolTip(this.pictureBox4, resources.GetString("pictureBox4.ToolTip"));
             // 
-            // Form1
+            // cWebpGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -307,8 +307,9 @@
             this.Controls.Add(this.lblOutputFile);
             this.Controls.Add(this.txtInputFile);
             this.Controls.Add(this.lblInputFile);
-            this.Name = "Form1";
+            this.Name = "cWebpGUI";
             this.Text = "cWebp GUI";
+            this.Load += new System.EventHandler(this.cWebpGUI_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
