@@ -127,7 +127,7 @@ namespace dWebpGUI
             this.chkMultiThreading.AutoSize = true;
             this.chkMultiThreading.Location = new System.Drawing.Point(22, 70);
             this.chkMultiThreading.Name = "chkMultiThreading";
-            this.chkMultiThreading.Size = new System.Drawing.Size(106, 21);
+            this.chkMultiThreading.Size = new System.Drawing.Size(99, 17);
             this.chkMultiThreading.TabIndex = 4;
             this.chkMultiThreading.Text = "Multi-Threading";
             this.chkMultiThreading.UseVisualStyleBackColor = true;
@@ -163,7 +163,7 @@ namespace dWebpGUI
             this.rbBMP.AutoSize = true;
             this.rbBMP.Location = new System.Drawing.Point(69, 48);
             this.rbBMP.Name = "rbBMP";
-            this.rbBMP.Size = new System.Drawing.Size(55, 20);
+            this.rbBMP.Size = new System.Drawing.Size(48, 17);
             this.rbBMP.TabIndex = 13;
             this.rbBMP.TabStop = true;
             this.rbBMP.Text = "BMP";
@@ -175,7 +175,7 @@ namespace dWebpGUI
             this.rbTIFF.AutoSize = true;
             this.rbTIFF.Location = new System.Drawing.Point(6, 48);
             this.rbTIFF.Name = "rbTIFF";
-            this.rbTIFF.Size = new System.Drawing.Size(54, 20);
+            this.rbTIFF.Size = new System.Drawing.Size(47, 17);
             this.rbTIFF.TabIndex = 14;
             this.rbTIFF.TabStop = true;
             this.rbTIFF.Text = "TIFF";
@@ -187,7 +187,7 @@ namespace dWebpGUI
             this.rbPAM.AutoSize = true;
             this.rbPAM.Location = new System.Drawing.Point(6, 75);
             this.rbPAM.Name = "rbPAM";
-            this.rbPAM.Size = new System.Drawing.Size(55, 20);
+            this.rbPAM.Size = new System.Drawing.Size(48, 17);
             this.rbPAM.TabIndex = 15;
             this.rbPAM.TabStop = true;
             this.rbPAM.Text = "PAM";
@@ -199,7 +199,7 @@ namespace dWebpGUI
             this.rbPPM.AutoSize = true;
             this.rbPPM.Location = new System.Drawing.Point(6, 102);
             this.rbPPM.Name = "rbPPM";
-            this.rbPPM.Size = new System.Drawing.Size(55, 20);
+            this.rbPPM.Size = new System.Drawing.Size(48, 17);
             this.rbPPM.TabIndex = 16;
             this.rbPPM.TabStop = true;
             this.rbPPM.Text = "PPM";
@@ -211,7 +211,7 @@ namespace dWebpGUI
             this.rbPGM.AutoSize = true;
             this.rbPGM.Location = new System.Drawing.Point(6, 129);
             this.rbPGM.Name = "rbPGM";
-            this.rbPGM.Size = new System.Drawing.Size(56, 20);
+            this.rbPGM.Size = new System.Drawing.Size(49, 17);
             this.rbPGM.TabIndex = 17;
             this.rbPGM.TabStop = true;
             this.rbPGM.Text = "PGM";
@@ -223,7 +223,7 @@ namespace dWebpGUI
             this.rbYUV.AutoSize = true;
             this.rbYUV.Location = new System.Drawing.Point(70, 21);
             this.rbYUV.Name = "rbYUV";
-            this.rbYUV.Size = new System.Drawing.Size(54, 20);
+            this.rbYUV.Size = new System.Drawing.Size(47, 17);
             this.rbYUV.TabIndex = 18;
             this.rbYUV.TabStop = true;
             this.rbYUV.Text = "YUV";
@@ -252,14 +252,14 @@ namespace dWebpGUI
             this.rbPNG.Checked = true;
             this.rbPNG.Location = new System.Drawing.Point(6, 21);
             this.rbPNG.Name = "rbPNG";
-            this.rbPNG.Size = new System.Drawing.Size(55, 20);
+            this.rbPNG.Size = new System.Drawing.Size(48, 17);
             this.rbPNG.TabIndex = 19;
             this.rbPNG.TabStop = true;
             this.rbPNG.Text = "PNG";
             this.rbPNG.UseVisualStyleBackColor = true;
             this.rbPNG.CheckedChanged += new System.EventHandler(this.OutputFormat_CheckedChanged);
             // 
-            // Form1
+            // dWebpGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -276,8 +276,9 @@ namespace dWebpGUI
             this.Controls.Add(this.lblOutputFile);
             this.Controls.Add(this.txtInputFile);
             this.Controls.Add(this.lblInputFile);
-            this.Name = "Form1";
+            this.Name = "dWebpGUI";
             this.Text = "DWebP GUI";
+            this.Load += new System.EventHandler(this.dWebpGUI_Load);
             this.grpOutputFormat.ResumeLayout(false);
             this.grpOutputFormat.PerformLayout();
             this.ResumeLayout(false);

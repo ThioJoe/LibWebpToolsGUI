@@ -6,9 +6,7 @@ GUI wrappers to use with the cWebP and dWebP binaries part of LibWebp.
 - dWebpGUI: Convert from WebP format using dWebp.exe
 
 ## Prerequisites:
-- Obtain the libwebp binaries from here: https://developers.google.com/speed/webp/docs/precompiled
-    - Select the one with the name "`...-windows-x64.zip` : 64-bit executables and libraries for Windows-x64 platform."
-- Place the GUI exes in the same folder as cwebp.exe and dwebp.exe
+- Just Download and run! LibWebpToolsGUI will do the rest!
 
 ## How to Download:
 - Find the files on the Releases page: https://github.com/ThioJoe/LibWebpToolsGUI/releases
