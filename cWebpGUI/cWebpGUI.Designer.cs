@@ -42,6 +42,10 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnBrowseInput = new System.Windows.Forms.Button();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.btnBrowseOutput = new System.Windows.Forms.Button();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -87,7 +91,7 @@
             this.chkLossless.AutoSize = true;
             this.chkLossless.Location = new System.Drawing.Point(15, 70);
             this.chkLossless.Name = "chkLossless";
-            this.chkLossless.Size = new System.Drawing.Size(73, 21);
+            this.chkLossless.Size = new System.Drawing.Size(66, 17);
             this.chkLossless.TabIndex = 4;
             this.chkLossless.Text = "Lossless";
             this.chkLossless.UseVisualStyleBackColor = true;
@@ -98,7 +102,7 @@
             this.chkMultiThreading.AutoSize = true;
             this.chkMultiThreading.Location = new System.Drawing.Point(15, 93);
             this.chkMultiThreading.Name = "chkMultiThreading";
-            this.chkMultiThreading.Size = new System.Drawing.Size(106, 21);
+            this.chkMultiThreading.Size = new System.Drawing.Size(99, 17);
             this.chkMultiThreading.TabIndex = 5;
             this.chkMultiThreading.Text = "Multi-Threading";
             this.chkMultiThreading.UseVisualStyleBackColor = true;
@@ -109,7 +113,7 @@
             this.chkLowMemory.AutoSize = true;
             this.chkLowMemory.Location = new System.Drawing.Point(15, 116);
             this.chkLowMemory.Name = "chkLowMemory";
-            this.chkLowMemory.Size = new System.Drawing.Size(93, 21);
+            this.chkLowMemory.Size = new System.Drawing.Size(86, 17);
             this.chkLowMemory.TabIndex = 6;
             this.chkLowMemory.Text = "Low Memory";
             this.chkLowMemory.UseVisualStyleBackColor = true;
@@ -197,7 +201,7 @@
             "5",
             "6"});
             this.cmbMethod.Location = new System.Drawing.Point(100, 224);
-            this.cmbMethod.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbMethod.Margin = new System.Windows.Forms.Padding(2);
             this.cmbMethod.Name = "cmbMethod";
             this.cmbMethod.Size = new System.Drawing.Size(68, 21);
             this.cmbMethod.TabIndex = 14;
@@ -235,7 +239,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(211, 142);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(16, 16);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -247,7 +251,7 @@
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(211, 168);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(16, 16);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -259,7 +263,7 @@
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(211, 198);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(16, 16);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -272,7 +276,7 @@
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.Location = new System.Drawing.Point(211, 227);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(16, 16);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -280,11 +284,44 @@
             this.pictureBox4.TabStop = false;
             this.toolTip1.SetToolTip(this.pictureBox4, resources.GetString("pictureBox4.ToolTip"));
             // 
-            // Form1
+            // btnBrowseInput
+            // 
+            this.btnBrowseInput.Location = new System.Drawing.Point(265, 10);
+            this.btnBrowseInput.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBrowseInput.Name = "btnBrowseInput";
+            this.btnBrowseInput.Size = new System.Drawing.Size(65, 21);
+            this.btnBrowseInput.TabIndex = 22;
+            this.btnBrowseInput.Text = "Browse...";
+            this.btnBrowseInput.UseVisualStyleBackColor = true;
+            this.btnBrowseInput.Click += new System.EventHandler(this.btnBrowseInput_Click);
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.Filter = "All Images|*png;*.jpg;*.jpeg;.tif;*.tiff;*.yuv|JPEG Image|*.jpg;*.jpeg|PNG Image|" +
+    "*.png|TIFF Image|*.tif;*tiff|YUV Image|*.yuv|All Files|*.*";
+            // 
+            // btnBrowseOutput
+            // 
+            this.btnBrowseOutput.Location = new System.Drawing.Point(265, 34);
+            this.btnBrowseOutput.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBrowseOutput.Name = "btnBrowseOutput";
+            this.btnBrowseOutput.Size = new System.Drawing.Size(65, 21);
+            this.btnBrowseOutput.TabIndex = 23;
+            this.btnBrowseOutput.Text = "Browse...";
+            this.btnBrowseOutput.UseVisualStyleBackColor = true;
+            this.btnBrowseOutput.Click += new System.EventHandler(this.btnBrowseOutput_Click);
+            // 
+            // saveFileDialog
+            // 
+            this.saveFileDialog.Filter = "WebP Image|*.webp";
+            // 
+            // cWebpGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(282, 400);
+            this.ClientSize = new System.Drawing.Size(339, 400);
+            this.Controls.Add(this.btnBrowseOutput);
+            this.Controls.Add(this.btnBrowseInput);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
@@ -307,7 +344,7 @@
             this.Controls.Add(this.lblOutputFile);
             this.Controls.Add(this.txtInputFile);
             this.Controls.Add(this.lblInputFile);
-            this.Name = "Form1";
+            this.Name = "cWebpGUI";
             this.Text = "cWebp GUI";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -343,5 +380,9 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Button btnBrowseInput;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.Button btnBrowseOutput;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
     }
 }
