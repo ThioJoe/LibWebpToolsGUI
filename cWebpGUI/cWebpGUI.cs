@@ -142,6 +142,7 @@ namespace cWebpGUI
 
         private void txtInputFile_TextChanged(object sender, EventArgs e)
         {
+            txtOutputFile.Text = Path.ChangeExtension(txtInputFile.Text, ".webp");
             UpdateCommandPreview();
         }
 
