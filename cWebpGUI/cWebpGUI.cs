@@ -52,7 +52,7 @@ namespace cWebpGUI
 
         private string BuildOptions()
         {
-            string options = "";
+            string options = "-metadata icc";    // Make sure to preserve/copy ICC color profiles as they are important, without them final images WILL look wrong.
 
             if (chkLossless.Checked)
                 options += " -lossless";
